@@ -11,15 +11,19 @@ import SwiftyJSON
 
 class GrailedTranslator {
   // MARK: Public Static Methods
-  static func translateArticles(response: JSON) -> ArticleData? {
-    guard let jsonArray = response.array else { return nil }
-    
-    let articles = ArticleFactory.createArticles(fromJSONarray: jsonArray)
-    
-    return ArticleData(
-      articles: articles,
-      paginationData: translatePaginationData(response: response)
-    )
+  static func translateArticles(response: @escaping (ArticleData?) -> ()) -> APIRequest.DataCompletion  {
+    return { data in
+      guard let jsonArray = data["data"].array else { return response(nil) }
+  
+      let articles = ArticleFactory.createArticles(fromJSONarray: jsonArray)
+  
+      let articleData = ArticleData(
+        articles: articles,
+        paginationData: translatePaginationData(response: data)
+      )
+      
+      return response(articleData)
+    }
   }
   
   static func translateMerchandise(response: JSON) -> [Merchandise] {
@@ -29,6 +33,12 @@ class GrailedTranslator {
   
   // MARK: Private Static Methods
   private static func translatePaginationData(response: JSON) -> PaginationData {
-    return PaginationData(next: "", current: "", prev: "")
+    let paginationData = response["metadata"]["pagination"]
+    
+    return PaginationData(
+      next: paginationData["next_page"].string ?? "",
+      current: paginationData["current_page"].string ?? "",
+      prev: paginationData["previous_page"].string ?? ""
+    )
   }
 }

@@ -22,8 +22,9 @@ struct ArticleActions {
 func getArticles() {
   mainStore.dispatch(ArticleActions.RequestArticles())
   
-  GrailedRequest.shared.getArticles(success: { articles in
-    mainStore.dispatch(ArticleActions.ReceiveArticles(data: articles))
+  GrailedRequest.shared.getArticles(success: { articleData in
+    guard let articleData = articleData else { return }
+    mainStore.dispatch(ArticleActions.ReceiveArticles(data: articleData))
   }, failure: { error in
     mainStore.dispatch(ArticleActions.ErrorArticles(error: error))
   })

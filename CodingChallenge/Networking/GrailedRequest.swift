@@ -14,11 +14,11 @@ class GrailedRequest {
   static let shared = GrailedRequest()
   
   // MARK: Public Methods
-  func getArticles(success: (ArticleData) -> (), failure: @escaping APIRequest.ErrorCompletion) {
+  func getArticles(success: @escaping (ArticleData?) -> (), failure: @escaping APIRequest.ErrorCompletion) {
     request.get(
       url: completeURL(fromEndpoint: "articles/ios_index"),
       headers: defaultHeaders,
-      success: { json in },
+      success: GrailedTranslator.translateArticles(response: success),
       failure: failure
     )
   }

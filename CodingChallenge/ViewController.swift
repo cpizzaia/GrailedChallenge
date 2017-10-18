@@ -10,6 +10,15 @@ import UIKit
 import ReSwift
 
 class ViewController: UIViewController, StoreSubscriber {
+  
+  @IBOutlet var button: UIButton!
+  
+  
+  @IBAction func buttonTapped(_ sender: UIButton) {
+    getArticles()
+  }
+  
+  
   typealias StoreSubscriberStateType = AppState
   
 
