@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ReSwift
 
 func log(_ message: String, functionName: String = #function, line: Int = #line, fileName: String = #file) {
   let className: String = fileName.components(separatedBy: "/").last?.components(separatedBy: ".").first ?? ""
@@ -14,3 +15,8 @@ func log(_ message: String, functionName: String = #function, line: Int = #line,
   
   print(statement)
 }
+
+let mainStore = Store<AppState>(
+  reducer: appReducer,
+  state: nil
+)

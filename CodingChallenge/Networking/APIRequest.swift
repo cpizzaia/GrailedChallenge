@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class APIRequest {
+  static let shared = APIRequest()
   
   struct APIError: Error {
     let code: Int
@@ -39,12 +40,15 @@ class APIRequest {
   typealias DataCompletion = (JSON) -> ()
   typealias ErrorCompletion = (APIError) -> ()
   
+  //MARK: Public Methods
   func get(url: String, headers: HTTPHeaders?, success: @escaping DataCompletion, failure: @escaping ErrorCompletion) {
     
     request(params: RequestParams(url: url, method: .get, body: nil, headers: headers, success: success, failure: failure))
     
   }
   
+  //MARK: Private Methods
+  private init() {}
   
   private func request(params: RequestParams) {
     log("\(params.method.rawValue): \(params.url)")
@@ -61,9 +65,8 @@ class APIRequest {
   }
   
   
-  //MARK: Private Methods
+  
   private func handle(response: DataResponse<Any>, params: RequestParams) {
-    
     let apiResponse = Response(
       statusCode: response.response?.statusCode ?? 400,
       headers: JSON(response.response?.allHeaderFields ?? [:]),
@@ -82,8 +85,6 @@ class APIRequest {
   }
   
   private func errorFrom(response: Response) -> APIError {
-    let error = response.body["error"]
-    
     return APIError(
       code: response.statusCode,
       domainCode: nil,

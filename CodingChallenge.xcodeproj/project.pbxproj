@@ -15,6 +15,14 @@
 		AC29FDCF1F96F69B00CB5154 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC29FDCD1F96F69B00CB5154 /* LaunchScreen.storyboard */; };
 		AC29FDD81F96F7C500CB5154 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDD71F96F7C500CB5154 /* APIRequest.swift */; };
 		AC29FDDA1F96F88700CB5154 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDD91F96F88700CB5154 /* AppConstants.swift */; };
+		AC29FDDF1F96FD4C00CB5154 /* ArticlesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDDE1F96FD4C00CB5154 /* ArticlesReducer.swift */; };
+		AC29FDE11F96FD6500CB5154 /* MerchandiseReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDE01F96FD6500CB5154 /* MerchandiseReducer.swift */; };
+		AC29FDE31F96FDA400CB5154 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDE21F96FDA400CB5154 /* AppReducer.swift */; };
+		AC29FDE51F9700A100CB5154 /* GrailedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDE41F9700A100CB5154 /* GrailedRequest.swift */; };
+		AC29FDE81F97018E00CB5154 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDE71F97018E00CB5154 /* Article.swift */; };
+		AC29FDEA1F9701AC00CB5154 /* Merchandise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDE91F9701AC00CB5154 /* Merchandise.swift */; };
+		AC29FDED1F9701F000CB5154 /* ArticleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDEC1F9701F000CB5154 /* ArticleFactory.swift */; };
+		AC29FDEF1F9701FE00CB5154 /* MerchandiseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDEE1F9701FE00CB5154 /* MerchandiseFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		AC29FDD01F96F69B00CB5154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC29FDD71F96F7C500CB5154 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		AC29FDD91F96F88700CB5154 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		AC29FDDE1F96FD4C00CB5154 /* ArticlesReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesReducer.swift; sourceTree = "<group>"; };
+		AC29FDE01F96FD6500CB5154 /* MerchandiseReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchandiseReducer.swift; sourceTree = "<group>"; };
+		AC29FDE21F96FDA400CB5154 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		AC29FDE41F9700A100CB5154 /* GrailedRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrailedRequest.swift; sourceTree = "<group>"; };
+		AC29FDE71F97018E00CB5154 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		AC29FDE91F9701AC00CB5154 /* Merchandise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchandise.swift; sourceTree = "<group>"; };
+		AC29FDEC1F9701F000CB5154 /* ArticleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFactory.swift; sourceTree = "<group>"; };
+		AC29FDEE1F9701FE00CB5154 /* MerchandiseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchandiseFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +89,9 @@
 		AC29FDC31F96F69B00CB5154 /* CodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				AC29FDEB1F9701D500CB5154 /* Factories */,
+				AC29FDE61F97018300CB5154 /* Models */,
+				AC29FDDD1F96FD2F00CB5154 /* Reducers */,
 				AC29FDD61F96F7B200CB5154 /* Networking */,
 				AC29FDC41F96F69B00CB5154 /* AppDelegate.swift */,
 				AC29FDC61F96F69B00CB5154 /* ViewController.swift */,
@@ -89,8 +108,37 @@
 			isa = PBXGroup;
 			children = (
 				AC29FDD71F96F7C500CB5154 /* APIRequest.swift */,
+				AC29FDE41F9700A100CB5154 /* GrailedRequest.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		AC29FDDD1F96FD2F00CB5154 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				AC29FDDE1F96FD4C00CB5154 /* ArticlesReducer.swift */,
+				AC29FDE01F96FD6500CB5154 /* MerchandiseReducer.swift */,
+				AC29FDE21F96FDA400CB5154 /* AppReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		AC29FDE61F97018300CB5154 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC29FDE71F97018E00CB5154 /* Article.swift */,
+				AC29FDE91F9701AC00CB5154 /* Merchandise.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC29FDEB1F9701D500CB5154 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				AC29FDEC1F9701F000CB5154 /* ArticleFactory.swift */,
+				AC29FDEE1F9701FE00CB5154 /* MerchandiseFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		E8F9715D64D48D68E12B97F5 /* Pods */ = {
@@ -181,11 +229,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CodingChallenge/Pods-CodingChallenge-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,9 +283,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC29FDE51F9700A100CB5154 /* GrailedRequest.swift in Sources */,
 				AC29FDC71F96F69B00CB5154 /* ViewController.swift in Sources */,
+				AC29FDE81F97018E00CB5154 /* Article.swift in Sources */,
+				AC29FDDF1F96FD4C00CB5154 /* ArticlesReducer.swift in Sources */,
 				AC29FDD81F96F7C500CB5154 /* APIRequest.swift in Sources */,
 				AC29FDC51F96F69B00CB5154 /* AppDelegate.swift in Sources */,
+				AC29FDED1F9701F000CB5154 /* ArticleFactory.swift in Sources */,
+				AC29FDE11F96FD6500CB5154 /* MerchandiseReducer.swift in Sources */,
+				AC29FDEA1F9701AC00CB5154 /* Merchandise.swift in Sources */,
+				AC29FDE31F96FDA400CB5154 /* AppReducer.swift in Sources */,
+				AC29FDEF1F9701FE00CB5154 /* MerchandiseFactory.swift in Sources */,
 				AC29FDDA1F96F88700CB5154 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
