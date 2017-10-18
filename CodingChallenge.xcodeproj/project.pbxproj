@@ -23,6 +23,8 @@
 		AC29FDEA1F9701AC00CB5154 /* Merchandise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDE91F9701AC00CB5154 /* Merchandise.swift */; };
 		AC29FDED1F9701F000CB5154 /* ArticleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDEC1F9701F000CB5154 /* ArticleFactory.swift */; };
 		AC29FDEF1F9701FE00CB5154 /* MerchandiseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDEE1F9701FE00CB5154 /* MerchandiseFactory.swift */; };
+		AC29FDF11F9703CB00CB5154 /* GrailedTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDF01F9703CB00CB5154 /* GrailedTranslator.swift */; };
+		AC29FDF41F97056A00CB5154 /* ArticleActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDF31F97056A00CB5154 /* ArticleActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		AC29FDE91F9701AC00CB5154 /* Merchandise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchandise.swift; sourceTree = "<group>"; };
 		AC29FDEC1F9701F000CB5154 /* ArticleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFactory.swift; sourceTree = "<group>"; };
 		AC29FDEE1F9701FE00CB5154 /* MerchandiseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchandiseFactory.swift; sourceTree = "<group>"; };
+		AC29FDF01F9703CB00CB5154 /* GrailedTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrailedTranslator.swift; sourceTree = "<group>"; };
+		AC29FDF31F97056A00CB5154 /* ArticleActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		AC29FDC31F96F69B00CB5154 /* CodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				AC29FDF21F97055C00CB5154 /* Actions */,
 				AC29FDEB1F9701D500CB5154 /* Factories */,
 				AC29FDE61F97018300CB5154 /* Models */,
 				AC29FDDD1F96FD2F00CB5154 /* Reducers */,
@@ -109,6 +114,7 @@
 			children = (
 				AC29FDD71F96F7C500CB5154 /* APIRequest.swift */,
 				AC29FDE41F9700A100CB5154 /* GrailedRequest.swift */,
+				AC29FDF01F9703CB00CB5154 /* GrailedTranslator.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -139,6 +145,14 @@
 				AC29FDEE1F9701FE00CB5154 /* MerchandiseFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		AC29FDF21F97055C00CB5154 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				AC29FDF31F97056A00CB5154 /* ArticleActions.swift */,
+			);
+			path = Actions;
 			sourceTree = "<group>";
 		};
 		E8F9715D64D48D68E12B97F5 /* Pods */ = {
@@ -283,9 +297,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC29FDF11F9703CB00CB5154 /* GrailedTranslator.swift in Sources */,
 				AC29FDE51F9700A100CB5154 /* GrailedRequest.swift in Sources */,
 				AC29FDC71F96F69B00CB5154 /* ViewController.swift in Sources */,
 				AC29FDE81F97018E00CB5154 /* Article.swift in Sources */,
+				AC29FDF41F97056A00CB5154 /* ArticleActions.swift in Sources */,
 				AC29FDDF1F96FD4C00CB5154 /* ArticlesReducer.swift in Sources */,
 				AC29FDD81F96F7C500CB5154 /* APIRequest.swift in Sources */,
 				AC29FDC51F96F69B00CB5154 /* AppDelegate.swift in Sources */,

@@ -9,17 +9,34 @@
 import Foundation
 import ReSwift
 
+typealias PaginationData = (next: String, current: String, prev: String)
+typealias ArticleData = (articles: [Article], paginationData: PaginationData)
+
 struct ArticlesState {
-  var items: [Article]
+  var items: [ArticleData]
+  var requesting: Bool
 }
 
 fileprivate func initialArticlesState() -> ArticlesState {
-  return ArticlesState(items: [])
+  return ArticlesState(items: [], requesting: false)
 }
 
 func articlesReducer(state: ArticlesState?, action: Action) -> ArticlesState {
-  let state = state ?? initialArticlesState()
+  var state = state ?? initialArticlesState()
   
+  switch action {
+  case _ as ReSwiftInit:
+    break
+  case _ as ArticleActions.RequestArticles:
+    state.requesting = true
+  case let action as ArticleActions.ReceiveArticles:
+    state.items = state.items + [action.data]
+    state.requesting = false
+  case _ as ArticleActions.ErrorArticles:
+    state.requesting = false
+  default:
+    break
+  }
   
   return state
 }
