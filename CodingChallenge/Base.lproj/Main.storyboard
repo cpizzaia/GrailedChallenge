@@ -19,11 +19,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pn6-j3-PnC">
-                                <rect key="frame" x="0.0" y="76.5" width="187.5" height="600.5"/>
+                                <rect key="frame" x="0.0" y="66.5" width="187.5" height="600.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Articles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riW-GY-wjH">
-                                <rect key="frame" x="0.0" y="35" width="187.5" height="24"/>
+                                <rect key="frame" x="0.0" y="25" width="187.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3SX-pz-iB2">
+                                <rect key="frame" x="187.5" y="66.5" width="187.5" height="600.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merchandise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA9-56-RFW">
+                                <rect key="frame" x="187.5" y="25" width="187.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -32,17 +42,25 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pn6-j3-PnC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="7sD-bz-VNl"/>
+                            <constraint firstItem="3SX-pz-iB2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="1.5" id="FZC-Ml-wSl"/>
                             <constraint firstItem="riW-GY-wjH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="0.5" id="HVb-uJ-8je"/>
                             <constraint firstItem="pn6-j3-PnC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="0.5" id="MJN-cg-ZoA"/>
                             <constraint firstItem="pn6-j3-PnC" firstAttribute="top" secondItem="riW-GY-wjH" secondAttribute="bottom" constant="17.5" id="Qet-L8-YNV"/>
-                            <constraint firstItem="pn6-j3-PnC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="sfC-g3-cF9"/>
+                            <constraint firstItem="AA9-56-RFW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="1.5" id="cnJ-8m-DC1"/>
+                            <constraint firstItem="AA9-56-RFW" firstAttribute="width" secondItem="riW-GY-wjH" secondAttribute="width" id="dpl-2B-flv"/>
+                            <constraint firstItem="3SX-pz-iB2" firstAttribute="top" secondItem="AA9-56-RFW" secondAttribute="bottom" constant="17.5" id="eFf-oC-J2T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3SX-pz-iB2" secondAttribute="bottom" id="pH4-Yi-wdn"/>
+                            <constraint firstItem="3SX-pz-iB2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="ppz-hg-zez"/>
+                            <constraint firstItem="pn6-j3-PnC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sfC-g3-cF9"/>
                             <constraint firstItem="pn6-j3-PnC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.9" id="uYL-Mb-ZrN"/>
+                            <constraint firstItem="3SX-pz-iB2" firstAttribute="height" secondItem="pn6-j3-PnC" secondAttribute="height" id="up9-TS-7v0"/>
                             <constraint firstItem="riW-GY-wjH" firstAttribute="width" secondItem="pn6-j3-PnC" secondAttribute="width" id="xe3-dd-Mbu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="articlesTableView" destination="pn6-j3-PnC" id="9uc-bh-gyX"/>
+                        <outlet property="merchandiseTableView" destination="3SX-pz-iB2" id="w9s-xL-ZVr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

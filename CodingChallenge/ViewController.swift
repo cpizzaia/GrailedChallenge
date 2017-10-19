@@ -13,6 +13,7 @@ class ViewController: UIViewController, StoreSubscriber {
   typealias StoreSubscriberStateType = AppState
   
   @IBOutlet var articlesTableView: UITableView!
+  @IBOutlet var merchandiseTableView: UITableView!
   
   //MARK: Public Properties
   var articles = [Article]()
@@ -27,10 +28,19 @@ class ViewController: UIViewController, StoreSubscriber {
       forCellReuseIdentifier: "browsableCell"
     )
     
+    merchandiseTableView.register(
+      UINib(nibName: "BrowsableTableViewCell", bundle: nil),
+      forCellReuseIdentifier: "browsableCell"
+    )
+    
+    
     getArticles()
     
     articlesTableView.dataSource = self
     articlesTableView.delegate = self
+    
+    merchandiseTableView.dataSource = self
+    merchandiseTableView.delegate = self
   }
   
   func newState(state: ViewController.StoreSubscriberStateType) {
@@ -41,6 +51,7 @@ class ViewController: UIViewController, StoreSubscriber {
     nextPage = state.articles.items.last?.paginationData.next
     
     articlesTableView.reloadData()
+    merchandiseTableView.reloadData()
   }
 
   override func viewWillAppear(_ animated: Bool) {
