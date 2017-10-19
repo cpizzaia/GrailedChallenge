@@ -25,6 +25,9 @@
 		AC29FDEF1F9701FE00CB5154 /* MerchandiseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDEE1F9701FE00CB5154 /* MerchandiseFactory.swift */; };
 		AC29FDF11F9703CB00CB5154 /* GrailedTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDF01F9703CB00CB5154 /* GrailedTranslator.swift */; };
 		AC29FDF41F97056A00CB5154 /* ArticleActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29FDF31F97056A00CB5154 /* ArticleActions.swift */; };
+		AC41997E1F98393600FEC8E7 /* BrowsableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC41997D1F98393600FEC8E7 /* BrowsableTableViewCell.swift */; };
+		AC4199801F9839B600FEC8E7 /* BrowsableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC41997F1F9839B600FEC8E7 /* BrowsableTableViewCell.xib */; };
+		AC4199821F98400100FEC8E7 /* BrowsableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4199811F98400100FEC8E7 /* BrowsableItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		AC29FDEE1F9701FE00CB5154 /* MerchandiseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchandiseFactory.swift; sourceTree = "<group>"; };
 		AC29FDF01F9703CB00CB5154 /* GrailedTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrailedTranslator.swift; sourceTree = "<group>"; };
 		AC29FDF31F97056A00CB5154 /* ArticleActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleActions.swift; sourceTree = "<group>"; };
+		AC41997D1F98393600FEC8E7 /* BrowsableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsableTableViewCell.swift; sourceTree = "<group>"; };
+		AC41997F1F9839B600FEC8E7 /* BrowsableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowsableTableViewCell.xib; sourceTree = "<group>"; };
+		AC4199811F98400100FEC8E7 /* BrowsableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsableItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 		AC29FDC31F96F69B00CB5154 /* CodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				AC41997C1F98392500FEC8E7 /* TableViewCells */,
 				AC29FDF21F97055C00CB5154 /* Actions */,
 				AC29FDEB1F9701D500CB5154 /* Factories */,
 				AC29FDE61F97018300CB5154 /* Models */,
@@ -134,6 +141,7 @@
 			children = (
 				AC29FDE71F97018E00CB5154 /* Article.swift */,
 				AC29FDE91F9701AC00CB5154 /* Merchandise.swift */,
+				AC4199811F98400100FEC8E7 /* BrowsableItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -153,6 +161,15 @@
 				AC29FDF31F97056A00CB5154 /* ArticleActions.swift */,
 			);
 			path = Actions;
+			sourceTree = "<group>";
+		};
+		AC41997C1F98392500FEC8E7 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				AC41997D1F98393600FEC8E7 /* BrowsableTableViewCell.swift */,
+				AC41997F1F9839B600FEC8E7 /* BrowsableTableViewCell.xib */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		E8F9715D64D48D68E12B97F5 /* Pods */ = {
@@ -226,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4199801F9839B600FEC8E7 /* BrowsableTableViewCell.xib in Resources */,
 				AC29FDCF1F96F69B00CB5154 /* LaunchScreen.storyboard in Resources */,
 				AC29FDCC1F96F69B00CB5154 /* Assets.xcassets in Resources */,
 				AC29FDCA1F96F69B00CB5154 /* Main.storyboard in Resources */,
@@ -244,12 +262,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CodingChallenge/Pods-CodingChallenge-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,8 +325,10 @@
 				AC29FDDF1F96FD4C00CB5154 /* ArticlesReducer.swift in Sources */,
 				AC29FDD81F96F7C500CB5154 /* APIRequest.swift in Sources */,
 				AC29FDC51F96F69B00CB5154 /* AppDelegate.swift in Sources */,
+				AC41997E1F98393600FEC8E7 /* BrowsableTableViewCell.swift in Sources */,
 				AC29FDED1F9701F000CB5154 /* ArticleFactory.swift in Sources */,
 				AC29FDE11F96FD6500CB5154 /* MerchandiseReducer.swift in Sources */,
+				AC4199821F98400100FEC8E7 /* BrowsableItem.swift in Sources */,
 				AC29FDEA1F9701AC00CB5154 /* Merchandise.swift in Sources */,
 				AC29FDE31F96FDA400CB5154 /* AppReducer.swift in Sources */,
 				AC29FDEF1F9701FE00CB5154 /* MerchandiseFactory.swift in Sources */,

@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,27 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNs-Rd-1PT">
-                                <rect key="frame" x="164" y="328.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ldZ-TM-G2V"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pn6-j3-PnC">
+                                <rect key="frame" x="0.0" y="10" width="187.5" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="CNs-Rd-1PT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bL4-vj-96s"/>
-                            <constraint firstItem="CNs-Rd-1PT" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="iZh-Bm-7Il"/>
+                            <constraint firstItem="pn6-j3-PnC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="7sD-bz-VNl"/>
+                            <constraint firstItem="pn6-j3-PnC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="0.5" id="MJN-cg-ZoA"/>
+                            <constraint firstItem="pn6-j3-PnC" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="l3m-hr-Bk1"/>
+                            <constraint firstItem="pn6-j3-PnC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="uYL-Mb-ZrN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="CNs-Rd-1PT" id="lRK-KV-adk"/>
+                        <outlet property="articlesTableView" destination="pn6-j3-PnC" id="9uc-bh-gyX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="119.1904047976012"/>
         </scene>
     </scenes>
 </document>

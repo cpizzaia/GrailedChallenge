@@ -23,3 +23,19 @@ struct Article {
   let contentType: String
   let position: String
 }
+
+extension Article: BrowsableItem {
+  var image: String {
+    get {
+      return "https://cdn.fs.grailed.com/AJdAgnqCST4iPtnUxiGtTz/rotate=deg:exif/rotate=deg:0/resize=width:\(300),fit:crop/output=format:jpg,compress:true,quality:95/\(hero)"
+    }
+  }
+  
+  var datePublished: String {
+    get {
+      
+      
+      return "Published Today"
+    }
+  }
+}
