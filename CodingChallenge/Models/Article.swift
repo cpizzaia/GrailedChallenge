@@ -12,7 +12,7 @@ struct Article {
   let id: Int
   let url: String
   let title: String
-  let publishedAt: Int
+  let publishedAt: String
   let published: Bool
   let hero: String
   let listings: [String]
@@ -33,9 +33,7 @@ extension Article: BrowsableItem {
   
   var datePublished: String {
     get {
-      
-      
-      return "Published Today"
+      return "Published on \(publishedAt)"
     }
   }
 }

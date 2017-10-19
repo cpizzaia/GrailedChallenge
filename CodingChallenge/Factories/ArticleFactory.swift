@@ -16,7 +16,7 @@ class ArticleFactory {
       id: json["id"].int ?? 0,
       url: json["url"].string ?? "",
       title: json["title"].string ?? "",
-      publishedAt: json["published_at"].int ?? 0,
+      publishedAt: ConvertDates.formatDate(string: json["published_at"].string ?? ""),
       published: json["published"].bool ?? false,
       hero: json["hero"].string ?? "",
       listings: json["listings"].array?.flatMap({ $0.string }) ?? [],
