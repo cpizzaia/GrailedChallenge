@@ -14,9 +14,9 @@ class GrailedRequest {
   static let shared = GrailedRequest()
   
   // MARK: Public Methods
-  func getArticles(success: @escaping (ArticleData?) -> (), failure: @escaping APIRequest.ErrorCompletion) {
+  func getArticles(endpointForPage: String, success: @escaping (ArticleData?) -> (), failure: @escaping APIRequest.ErrorCompletion) {
     request.get(
-      url: completeURL(fromEndpoint: "articles/ios_index"),
+      url: completeURL(fromEndpoint: endpointForPage),
       headers: defaultHeaders,
       success: GrailedTranslator.translateArticles(response: success),
       failure: failure
@@ -25,7 +25,7 @@ class GrailedRequest {
   
   func getMerchandise(success: @escaping ([Merchandise]) -> (), failure: @escaping APIRequest.ErrorCompletion) {
     request.get(
-      url: completeURL(fromEndpoint: "merchandise/marquee"),
+      url: completeURL(fromEndpoint: "/api/merchandise/marquee"),
       headers: defaultHeaders,
       success: GrailedTranslator.translateMerchandise(response: success),
       failure: failure
@@ -34,7 +34,7 @@ class GrailedRequest {
   
   // MARK: Private Properties
   private let request: APIRequest
-  private let baseURL = "https://www.grailed.com/api/"
+  private let baseURL = "https://www.grailed.com"
   private let defaultHeaders: HTTPHeaders? = nil
   
   // MARK: Private Methods

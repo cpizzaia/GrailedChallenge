@@ -8,5 +8,5 @@ target 'CodingChallenge' do
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftyJSON'
   pod 'ReSwift'
-  pod 'SDWebImage', '~> 4.0'
+  pod 'SDWebImage', '~>3.8'
 end

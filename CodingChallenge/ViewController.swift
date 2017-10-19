@@ -19,11 +19,15 @@ class ViewController: UIViewController, StoreSubscriber {
   var articles = [Article]()
   var nextPage: String?
   var merchandise = [Merchandise]()
+  var isFetchingArticles = false
   
   
   // MARK: Public Methods
   override func viewDidLoad() {
     super.viewDidLoad()
+    merchandiseTableView.showsVerticalScrollIndicator = false
+    articlesTableView.showsVerticalScrollIndicator = false
+    
     articlesTableView.register(
       UINib(nibName: "BrowsableTableViewCell", bundle: nil),
       forCellReuseIdentifier: "browsableCell"
@@ -51,6 +55,8 @@ class ViewController: UIViewController, StoreSubscriber {
     })
     
     merchandise = state.merchandise.items
+    
+    isFetchingArticles = state.articles.requesting
     
     nextPage = state.articles.items.last?.paginationData.next
     
@@ -102,5 +108,18 @@ extension ViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 350
   }
+  
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    guard let nextPage = nextPage, scrollView == articlesTableView else { return }
+    
+    let scrollViewHeight = scrollView.frame.size.height
+    let scrollContentSizeHeight = scrollView.contentSize.height
+    let scrollOffset = scrollView.contentOffset.y
+    
+    if scrollOffset + scrollViewHeight >= scrollContentSizeHeight && !isFetchingArticles {
+      getArticles(endpointForPage: nextPage)
+    }
+  }
+  
 }
 

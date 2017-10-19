@@ -19,10 +19,10 @@ struct ArticleActions {
   }
 }
 
-func getArticles() {
+func getArticles(endpointForPage: String = "/api/articles/ios_index") {
   mainStore.dispatch(ArticleActions.RequestArticles())
   
-  GrailedRequest.shared.getArticles(success: { articleData in
+  GrailedRequest.shared.getArticles(endpointForPage: endpointForPage, success: { articleData in
     guard let articleData = articleData else { return }
     mainStore.dispatch(ArticleActions.ReceiveArticles(data: articleData))
   }, failure: { error in
