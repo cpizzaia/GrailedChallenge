@@ -29,6 +29,7 @@
 		AC4199801F9839B600FEC8E7 /* BrowsableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC41997F1F9839B600FEC8E7 /* BrowsableTableViewCell.xib */; };
 		AC4199821F98400100FEC8E7 /* BrowsableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4199811F98400100FEC8E7 /* BrowsableItem.swift */; };
 		AC4199871F984BCD00FEC8E7 /* ConvertDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4199861F984BCD00FEC8E7 /* ConvertDates.swift */; };
+		AC4199891F98550C00FEC8E7 /* MerchandiseActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4199881F98550C00FEC8E7 /* MerchandiseActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		AC41997F1F9839B600FEC8E7 /* BrowsableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowsableTableViewCell.xib; sourceTree = "<group>"; };
 		AC4199811F98400100FEC8E7 /* BrowsableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsableItem.swift; sourceTree = "<group>"; };
 		AC4199861F984BCD00FEC8E7 /* ConvertDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertDates.swift; sourceTree = "<group>"; };
+		AC4199881F98550C00FEC8E7 /* MerchandiseActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchandiseActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				AC29FDF31F97056A00CB5154 /* ArticleActions.swift */,
+				AC4199881F98550C00FEC8E7 /* MerchandiseActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				AC29FDED1F9701F000CB5154 /* ArticleFactory.swift in Sources */,
 				AC29FDE11F96FD6500CB5154 /* MerchandiseReducer.swift in Sources */,
 				AC4199821F98400100FEC8E7 /* BrowsableItem.swift in Sources */,
+				AC4199891F98550C00FEC8E7 /* MerchandiseActions.swift in Sources */,
 				AC29FDEA1F9701AC00CB5154 /* Merchandise.swift in Sources */,
 				AC29FDE31F96FDA400CB5154 /* AppReducer.swift in Sources */,
 				AC29FDEF1F9701FE00CB5154 /* MerchandiseFactory.swift in Sources */,

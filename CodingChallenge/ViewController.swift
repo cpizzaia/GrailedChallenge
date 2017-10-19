@@ -18,6 +18,7 @@ class ViewController: UIViewController, StoreSubscriber {
   //MARK: Public Properties
   var articles = [Article]()
   var nextPage: String?
+  var merchandise = [Merchandise]()
   
   
   // MARK: Public Methods
@@ -35,6 +36,7 @@ class ViewController: UIViewController, StoreSubscriber {
     
     
     getArticles()
+    getMerchandise()
     
     articlesTableView.dataSource = self
     articlesTableView.delegate = self
@@ -47,6 +49,8 @@ class ViewController: UIViewController, StoreSubscriber {
     articles = state.articles.items.reduce([], { articles, articleData in
       return articles + articleData.articles
     })
+    
+    merchandise = state.merchandise.items
     
     nextPage = state.articles.items.last?.paginationData.next
     
@@ -67,13 +71,28 @@ class ViewController: UIViewController, StoreSubscriber {
 
 extension ViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return articles.count
+    
+    switch tableView {
+    case articlesTableView:
+      return articles.count
+    case merchandiseTableView:
+      return merchandise.count
+    default:
+      return 0
+    }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = articlesTableView.dequeueReusableCell(withIdentifier: "browsableCell") as! BrowsableTableViewCell
     
-    cell.setupCellFor(browsableItem: articles[indexPath.row])
+    switch tableView {
+    case merchandiseTableView:
+      cell.setupCellFor(browsableItem: merchandise[indexPath.row])
+    case articlesTableView:
+      cell.setupCellFor(browsableItem: articles[indexPath.row])
+    default:
+      break
+    }
     
     return cell
   }

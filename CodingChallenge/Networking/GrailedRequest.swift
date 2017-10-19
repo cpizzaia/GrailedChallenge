@@ -23,8 +23,13 @@ class GrailedRequest {
     )
   }
   
-  func getMerchandise(success: ([Merchandise]) -> (), failure: APIRequest.ErrorCompletion) {
-    
+  func getMerchandise(success: @escaping ([Merchandise]) -> (), failure: @escaping APIRequest.ErrorCompletion) {
+    request.get(
+      url: completeURL(fromEndpoint: "merchandise/marquee"),
+      headers: defaultHeaders,
+      success: GrailedTranslator.translateMerchandise(response: success),
+      failure: failure
+    )
   }
   
   // MARK: Private Properties

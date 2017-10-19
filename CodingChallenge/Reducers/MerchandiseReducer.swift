@@ -11,14 +11,29 @@ import ReSwift
 
 struct MerchandiseState {
   var items: [Merchandise]
+  var requesting: Bool
 }
 
 fileprivate func initialMerchandiseState() -> MerchandiseState {
-  return MerchandiseState(items: [])
+  return MerchandiseState(items: [], requesting: false)
 }
 
 func merchandiseReducer(state: MerchandiseState?, action: Action) -> MerchandiseState {
-  let state = state ?? initialMerchandiseState()
+  var state = state ?? initialMerchandiseState()
+  
+  switch action {
+  case _ as ReSwiftInit:
+    break
+  case _ as MerchandiseActions.RequestMerchandise:
+    state.requesting = true
+  case let action as MerchandiseActions.ReceiveMerchandise:
+    state.items = action.items
+    state.requesting = false
+  case _ as MerchandiseActions.ErrorMerchandise:
+    state.requesting = false
+  default:
+    break
+  }
   
   return state
 }

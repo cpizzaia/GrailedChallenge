@@ -26,9 +26,15 @@ class GrailedTranslator {
     }
   }
   
-  static func translateMerchandise(response: JSON) -> [Merchandise] {
-    guard let jsonArray = response.array else { return [] }
-    return MerchandiseFactory.createMerchandise(fromJSONarray: jsonArray)
+  static func translateMerchandise(response: @escaping ([Merchandise]) -> ()) -> APIRequest.DataCompletion {
+    return { data in
+      guard let jsonArray = data["data"].array else {
+        response([])
+        return
+      }
+      
+      response(MerchandiseFactory.createMerchandise(fromJSONarray: jsonArray))
+    }
   }
   
   // MARK: Private Static Methods
