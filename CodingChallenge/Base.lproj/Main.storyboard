@@ -19,16 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pn6-j3-PnC">
-                                <rect key="frame" x="0.0" y="10" width="187.5" height="667"/>
+                                <rect key="frame" x="0.0" y="76.5" width="187.5" height="600.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Articles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riW-GY-wjH">
+                                <rect key="frame" x="0.0" y="35" width="187.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pn6-j3-PnC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="7sD-bz-VNl"/>
+                            <constraint firstItem="riW-GY-wjH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="0.5" id="HVb-uJ-8je"/>
                             <constraint firstItem="pn6-j3-PnC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="0.5" id="MJN-cg-ZoA"/>
-                            <constraint firstItem="pn6-j3-PnC" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="l3m-hr-Bk1"/>
-                            <constraint firstItem="pn6-j3-PnC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="uYL-Mb-ZrN"/>
+                            <constraint firstItem="pn6-j3-PnC" firstAttribute="top" secondItem="riW-GY-wjH" secondAttribute="bottom" constant="17.5" id="Qet-L8-YNV"/>
+                            <constraint firstItem="pn6-j3-PnC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="sfC-g3-cF9"/>
+                            <constraint firstItem="pn6-j3-PnC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.9" id="uYL-Mb-ZrN"/>
+                            <constraint firstItem="riW-GY-wjH" firstAttribute="width" secondItem="pn6-j3-PnC" secondAttribute="width" id="xe3-dd-Mbu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
